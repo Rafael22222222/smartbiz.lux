@@ -140,7 +140,7 @@ export default function Home() {
               <div className="w-1 h-5 bg-gradient-to-b from-ocean to-emerald rounded-full" />
               Quick Actions
             </h3>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -159,7 +159,7 @@ export default function Home() {
                 <CreditCard className="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" />
                 <span className="font-medium">Add Expense</span>
               </motion.button>
-              <div className="col-span-2">
+              <div className="col-span-1 sm:col-span-2">
                 <AddProductDialog />
               </div>
             </div>

@@ -94,12 +94,14 @@ export function ProductsList() {
 
     return (
         <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <h2 className="text-2xl font-bold">Product Inventory</h2>
                     <p className="text-muted-foreground">{products.length} products in stock</p>
                 </div>
-                <AddProductDialog />
+                <div className="w-full sm:w-auto">
+                    <AddProductDialog />
+                </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -119,8 +121,8 @@ export function ProductsList() {
                                     )}
                                 </div>
                                 <div className={`px-3 py-1 rounded-full text-xs font-medium ${product.quantity <= product.low_stock_threshold
-                                        ? 'bg-coral/10 text-coral border border-coral/20'
-                                        : 'bg-emerald/10 text-emerald border border-emerald/20'
+                                    ? 'bg-coral/10 text-coral border border-coral/20'
+                                    : 'bg-emerald/10 text-emerald border border-emerald/20'
                                     }`}>
                                     {product.quantity} in stock
                                 </div>
