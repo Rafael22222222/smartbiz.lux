@@ -44,7 +44,7 @@ export function AddExpenseDialog({ onExpenseAdded }: { onExpenseAdded?: () => vo
                     user_id: user.id,
                     description: description,
                     amount: expenseAmount,
-                    category: category || "General",
+                    category: category || "other",
                     expense_date: new Date().toISOString(),
                 })
 
@@ -122,14 +122,12 @@ export function AddExpenseDialog({ onExpenseAdded }: { onExpenseAdded?: () => vo
                                 className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-coral focus:outline-none"
                             >
                                 <option value="">Select category</option>
-                                <option value="Rent">Rent</option>
-                                <option value="Utilities">Utilities</option>
-                                <option value="Supplies">Supplies</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Salaries">Salaries</option>
-                                <option value="Transportation">Transportation</option>
-                                <option value="Equipment">Equipment</option>
-                                <option value="Other">Other</option>
+                                <option value="rent">Rent</option>
+                                <option value="utilities">Utilities</option>
+                                <option value="stock">Stock/Inventory</option>
+                                <option value="transport">Transportation</option>
+                                <option value="salaries">Salaries</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
 
