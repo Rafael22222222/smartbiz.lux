@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useCurrency } from "@/components/currency-provider";
 import { formatCurrency } from "@/lib/currency";
 import { AddProductDialog } from "@/components/AddProductDialog";
+import { AddSaleDialog } from "@/components/AddSaleDialog";
 import AuthProvider from "@/components/AuthProvider";
 import { useDashboardStats, useLowStockProducts } from "@/hooks/useDashboardData";
 
@@ -27,8 +28,13 @@ const item = {
 
 export default function Home() {
   const { currency } = useCurrency();
-  const { stats, loading: statsLoading } = useDashboardStats();
-  const { products: lowStockProducts, loading: productsLoading } = useLowStockProducts();
+  const { stats, loading: statsLoading, refresh: refreshStats } = useDashboardStats();
+  const { products: lowStockProducts, loading: productsLoading, refresh: refreshProducts } = useLowStockProducts();
+
+  const handleSaleAdded = () => {
+    refreshStats();
+    refreshProducts();
+  };
 
   return (
     <AuthProvider>
@@ -141,15 +147,9 @@ export default function Home() {
               Quick Actions
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => alert("New Sale feature coming soon! This will allow you to record sales transactions.")}
-                className="flex flex-col items-center justify-center p-6 rounded-xl bg-gradient-to-br from-ocean/10 to-ocean/5 hover:from-ocean/20 hover:to-ocean/10 text-ocean border border-ocean/20 transition-all group"
-              >
-                <DollarSign className="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" />
-                <span className="font-medium">New Sale</span>
-              </motion.button>
+              <div className="sm:col-span-2">
+                <AddSaleDialog onSaleAdded={handleSaleAdded} />
+              </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
