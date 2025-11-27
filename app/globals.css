@@ -1,26 +1,103 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 240 10% 97%;
+    /* Silver Mist */
+    --foreground: 240 6% 11%;
+    /* Graphite Black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 6% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 6% 11%;
+
+    --primary: 240 6% 11%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 39 47% 60%;
+    /* Soft Gold */
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 6% 11%;
+
+    --radius: 1rem;
+
+    /* Custom Luxury Colors */
+    --graphite: 240 6% 11%;
+    --slate: 240 5% 18%;
+    --silver: 240 10% 97%;
+    --gold: 39 47% 60%;
+    --champagne: 39 69% 87%;
+    --ocean: 223 93% 60%;
+    --emerald: 150 39% 49%;
+    --coral: 6 74% 63%;
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    /* Darker Graphite */
+    --foreground: 0 0% 98%;
+
+    --card: 240 8% 12%;
+    /* Slightly lighter than background */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 8% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 6% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 6% 15%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 39 47% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl;
+  }
+
+  .glass-card {
+    @apply bg-white/[0.08] dark:bg-white/[0.05] backdrop-blur-xl border border-white/[0.15] dark:border-white/[0.08] shadow-xl rounded-2xl;
+  }
 }
