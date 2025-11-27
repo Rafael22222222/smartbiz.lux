@@ -8,6 +8,7 @@ import { useCurrency } from "@/components/currency-provider";
 import { formatCurrency } from "@/lib/currency";
 import { AddProductDialog } from "@/components/AddProductDialog";
 import { AddSaleDialog } from "@/components/AddSaleDialog";
+import { AddExpenseDialog } from "@/components/AddExpenseDialog";
 import AuthProvider from "@/components/AuthProvider";
 import { useDashboardStats, useLowStockProducts } from "@/hooks/useDashboardData";
 
@@ -150,15 +151,9 @@ export default function Home() {
               <div className="sm:col-span-2">
                 <AddSaleDialog onSaleAdded={handleSaleAdded} />
               </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => alert("Add Expense feature coming soon! This will allow you to track business expenses.")}
-                className="flex flex-col items-center justify-center p-6 rounded-xl bg-gradient-to-br from-coral/10 to-coral/5 hover:from-coral/20 hover:to-coral/10 text-coral border border-coral/20 transition-all group"
-              >
-                <CreditCard className="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" />
-                <span className="font-medium">Add Expense</span>
-              </motion.button>
+              <div className="sm:col-span-2">
+                <AddExpenseDialog onExpenseAdded={handleSaleAdded} />
+              </div>
               <div className="col-span-1 sm:col-span-2">
                 <AddProductDialog />
               </div>
