@@ -37,7 +37,7 @@ export default function Home() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid gap-6 md:grid-cols-3 mb-8"
+          className="grid gap-3 sm:gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mb-6 sm:mb-8"
         >
           {/* Total Sales Card */}
           <motion.div variants={item}>
@@ -132,7 +132,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="grid gap-6 md:grid-cols-2"
+          className="grid gap-3 sm:gap-4 md:gap-6 grid-cols-1 md:grid-cols-2"
         >
           {/* Quick Actions */}
           <GlassCard className="h-full">

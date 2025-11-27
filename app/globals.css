@@ -101,3 +101,20 @@
     @apply bg-white/[0.08] dark:bg-white/[0.05] backdrop-blur-xl border border-white/[0.15] dark:border-white/[0.08] shadow-xl rounded-2xl;
   }
 }
+
+/* Mobile-first responsive fixes */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  .glass-card {
+    @apply rounded-xl;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}

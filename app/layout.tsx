@@ -11,7 +11,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "SmartBiz Lux - Business Dashboard",
-  description: "Track sales, profits, expenses, and inventory with ease",
+  description: "Track your business sales, profits, and inventory",
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
