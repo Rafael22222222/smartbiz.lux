@@ -162,7 +162,7 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
                                 id="product"
                                 value={selectedProductId}
                                 onChange={(e) => setSelectedProductId(e.target.value)}
-                                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-ocean focus:outline-none"
+                                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 focus:outline-none"
                                 required
                             >
                                 <option value="">Select a product</option>
@@ -217,14 +217,14 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
 
                         {calculatedProfit !== 0 && quantity && sellingPrice && (
                             <div className={`p-3 rounded-lg border ${calculatedProfit >= 0
-                                ? 'bg-emerald/10 border-emerald/20'
-                                : 'bg-coral/10 border-coral/20'
+                                ? 'bg-emerald-500/10 border-emerald-500/20'
+                                : 'bg-red-500/10 border-red-500/20'
                                 }`}>
                                 <div className="flex justify-between items-center">
                                     <span className="font-medium">
                                         {calculatedProfit >= 0 ? 'Profit' : 'Loss'}:
                                     </span>
-                                    <span className={`text-lg font-bold ${calculatedProfit >= 0 ? 'text-emerald' : 'text-coral'
+                                    <span className={`text-lg font-bold ${calculatedProfit >= 0 ? 'text-emerald-500' : 'text-red-500'
                                         }`}>
                                         {formatCurrency(Math.abs(calculatedProfit), currency)}
                                     </span>
@@ -247,7 +247,7 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
                         <Button
                             type="submit"
                             disabled={loading || !selectedProductId || !quantity || !sellingPrice}
-                            className="bg-ocean hover:bg-ocean/90"
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white"
                         >
                             {loading ? "Recording..." : "Record Sale"}
                         </Button>

@@ -51,14 +51,14 @@ const config: Config = {
                     '5': 'hsl(var(--chart-5))'
                 },
                 // Custom Luxury Colors
-                graphite: 'hsl(var(--graphite))',
-                slate: 'hsl(var(--slate))',
-                silver: 'hsl(var(--silver))',
-                gold: 'hsl(var(--gold))',
-                champagne: 'hsl(var(--champagne))',
-                ocean: 'hsl(var(--ocean))',
-                emerald: 'hsl(var(--emerald))',
-                coral: 'hsl(var(--coral))',
+                graphite: 'hsl(var(--graphite) / <alpha-value>)',
+                slate: 'hsl(var(--slate) / <alpha-value>)',
+                silver: 'hsl(var(--silver) / <alpha-value>)',
+                gold: 'hsl(var(--gold) / <alpha-value>)',
+                champagne: 'hsl(var(--champagne) / <alpha-value>)',
+                ocean: 'hsl(var(--ocean) / <alpha-value>)',
+                emerald: 'hsl(var(--emerald) / <alpha-value>)',
+                coral: 'hsl(var(--coral) / <alpha-value>)',
             },
             borderRadius: {
                 lg: 'var(--radius)',
