@@ -142,7 +142,7 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button className="w-full bg-gradient-to-r from-ocean to-ocean/80 hover:from-ocean/90 hover:to-ocean/70 text-white border-0">
+                <Button className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white border-0 shadow-lg shadow-emerald-500/20">
                     <DollarSign className="w-4 h-4 mr-2" />
                     Record Sale
                 </Button>
@@ -217,8 +217,8 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
 
                         {calculatedProfit !== 0 && quantity && sellingPrice && (
                             <div className={`p-3 rounded-lg border ${calculatedProfit >= 0
-                                    ? 'bg-emerald/10 border-emerald/20'
-                                    : 'bg-coral/10 border-coral/20'
+                                ? 'bg-emerald/10 border-emerald/20'
+                                : 'bg-coral/10 border-coral/20'
                                 }`}>
                                 <div className="flex justify-between items-center">
                                     <span className="font-medium">
