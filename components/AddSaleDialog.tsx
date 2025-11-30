@@ -142,7 +142,7 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white border-0 shadow-lg shadow-emerald-500/20">
+                <Button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white border-0 shadow-lg shadow-green-600/20">
                     <DollarSign className="w-4 h-4 mr-2" />
                     Record Sale
                 </Button>
@@ -162,7 +162,7 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
                                 id="product"
                                 value={selectedProductId}
                                 onChange={(e) => setSelectedProductId(e.target.value)}
-                                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 focus:outline-none"
+                                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-green-500 focus:outline-none"
                                 required
                             >
                                 <option value="">Select a product</option>
@@ -217,14 +217,14 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
 
                         {calculatedProfit !== 0 && quantity && sellingPrice && (
                             <div className={`p-3 rounded-lg border ${calculatedProfit >= 0
-                                ? 'bg-emerald-500/10 border-emerald-500/20'
+                                ? 'bg-green-500/10 border-green-500/20'
                                 : 'bg-red-500/10 border-red-500/20'
                                 }`}>
                                 <div className="flex justify-between items-center">
                                     <span className="font-medium">
                                         {calculatedProfit >= 0 ? 'Profit' : 'Loss'}:
                                     </span>
-                                    <span className={`text-lg font-bold ${calculatedProfit >= 0 ? 'text-emerald-500' : 'text-red-500'
+                                    <span className={`text-lg font-bold ${calculatedProfit >= 0 ? 'text-green-500' : 'text-red-500'
                                         }`}>
                                         {formatCurrency(Math.abs(calculatedProfit), currency)}
                                     </span>
@@ -247,7 +247,7 @@ export function AddSaleDialog({ onSaleAdded }: { onSaleAdded?: () => void }) {
                         <Button
                             type="submit"
                             disabled={loading || !selectedProductId || !quantity || !sellingPrice}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                            className="bg-green-600 hover:bg-green-700 text-white"
                         >
                             {loading ? "Recording..." : "Record Sale"}
                         </Button>

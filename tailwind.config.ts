@@ -57,7 +57,7 @@ const config: Config = {
                 gold: 'hsl(var(--gold) / <alpha-value>)',
                 champagne: 'hsl(var(--champagne) / <alpha-value>)',
                 ocean: 'hsl(var(--ocean) / <alpha-value>)',
-                emerald: 'hsl(var(--emerald) / <alpha-value>)',
+                'luxury-emerald': 'hsl(var(--emerald) / <alpha-value>)',
                 coral: 'hsl(var(--coral) / <alpha-value>)',
             },
             borderRadius: {
