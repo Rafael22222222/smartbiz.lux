@@ -5,7 +5,7 @@ import { ModeToggle } from "./mode-toggle"
 import { CurrencySelector } from "./currency-selector"
 import { ProfileDropdown } from "./ProfileDropdown"
 import Link from "next/link"
-import { Home, Package } from "lucide-react"
+import { Home, Package, TrendingUp } from "lucide-react"
 
 export default function DashboardLayout({
     children,
@@ -37,6 +37,13 @@ export default function DashboardLayout({
                             >
                                 <Package className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                 <span className="font-medium">Products</span>
+                            </Link>
+                            <Link
+                                href="/sales"
+                                className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 md:px-4 rounded-lg hover:bg-white/10 transition-colors whitespace-nowrap text-xs sm:text-sm"
+                            >
+                                <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                                <span className="font-medium">Sales</span>
                             </Link>
                         </nav>
                     </div>
